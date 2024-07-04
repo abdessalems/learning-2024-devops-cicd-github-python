@@ -7,8 +7,14 @@ before_script:
 
 stages:
   - build
+  - test
 
 build:
   stage: build
   script:
     - python -m py_compile add2vals.py calc.py
+
+test:
+  stage: test
+  script:
+    - pytest
